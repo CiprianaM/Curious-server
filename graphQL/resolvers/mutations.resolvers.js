@@ -1,6 +1,16 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const db = require('../../models/index');
+const db = require('../../models');
+
+// const resolvers = createResolvers(fakeDB)
+
+// export function createResolvers(db) {
+//   return {
+//     signup() {
+//       db.Users.doSomething...
+//     }
+//   }
+// }
 
 exports.signup = async (obj, { name, email, password }) => {
   const saltRounds = parseInt(process.env.SALT_ROUNDS, 10);
