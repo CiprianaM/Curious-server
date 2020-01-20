@@ -18,7 +18,7 @@ exports.roadmaps = async (obj, args, { user }) => {
   if (args.category) findQuery.where = { ...findQuery.where, category: args.category };
   if (args.id) findQuery.where = { ...findQuery.where, id: args.id };
   if (args.UserId === String(user.id)) findQuery.where = { UserId: args.UserId };
-  return db.Roadmaps.findAll(findQuery);
+  return await db.Roadmaps.findAll(findQuery);
 };
 
 exports.topics = async (obj, args) => {
